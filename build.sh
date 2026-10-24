@@ -6,7 +6,7 @@ rm -rf .repo/local_manifests
 git clone https://github.com/Sehraan/local_manifests -b infi .repo/local_manifests
 
 # sync
-repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --4)
+bash /opt/crave/resync.sh
 
 # signing the build
 croot && git clone https://github.com/ProjectInfinity-X/vendor_infinity-priv_keys-template vendor/infinity-priv/keys
