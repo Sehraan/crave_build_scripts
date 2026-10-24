@@ -8,11 +8,6 @@ git clone https://github.com/Sehraan/local_manifests -b infi .repo/local_manifes
 # sync
 bash /opt/crave/resync.sh
 
-# signing the build
-croot && git clone https://github.com/ProjectInfinity-X/vendor_infinity-priv_keys-template vendor/infinity-priv/keys
-cd vendor/infinity-priv/keys
-./keys.sh
-
 # prep
 source build/envsetup.sh
 lunch infinity_spes-userdebug
