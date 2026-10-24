@@ -3,10 +3,10 @@ repo init --depth=1 --no-repo-verify --git-lfs -u https://github.com/ProjectInfi
 
 # clone my manifest
 rm -rf .repo/local_manifests
-git clone https://github.com/Sehraan/local_manifests -b SS-A17 .repo/local_manifests
+git clone https://github.com/Sehraan/local_manifests -b infi .repo/local_manifests
 
 # sync
-bash /opt/crave/resync.sh
+repo sync -c --no-clone-bundle --no-tags --optimized-fetch --prune --force-sync -j$(nproc --4)
 
 # signing the build
 croot && git clone https://github.com/ProjectInfinity-X/vendor_infinity-priv_keys-template vendor/infinity-priv/keys
